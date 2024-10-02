@@ -6,21 +6,13 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 10:21:43 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/01 11:07:16 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/02 10:04:10 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char *str)
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	while (str[i])
-	{
-		if ((65 <= str[i] && str[i] <= 90) || (97 <= str[i] && str[i] <= 122))
-			i++;
-		else
-			return (0);
-	}
-	return (1);
+int	ft_isalpha(int c)
+{
+	return ((65 <= c && c <= 90) || (97 <= c && c <= 122));
 }

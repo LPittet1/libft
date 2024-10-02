@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 10:48:26 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/02 10:04:13 by lpittet          ###   ########.fr       */
+/*   Created: 2024/10/02 10:01:27 by lpittet           #+#    #+#             */
+/*   Updated: 2024/10/02 10:06:22 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-int	ft_isdigit(int c)
-{
-	return (48 <= c && c <= 57);
-}
+#include <stdlib.h>
+#include <unistd.h>
+
+//to remove before submit for test
+#include <stdio.h>
+#endif

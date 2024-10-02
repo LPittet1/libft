@@ -6,28 +6,30 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:16:23 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/01 14:28:16 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/02 10:04:07 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+#include "libft.h"
+
+int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	res;
+	long	i;
+	long	res;
 
 	i = 0;
 	res = 0;
-	if (str[i] == '-' || str[i] == '+')
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
 		i++;
 	}
-	while ('0' <= str[i] && str[i] <= '9')
+	while ('0' <= nptr[i] && nptr[i] <= '9')
 	{
-		res += (str[i] - 48);
+		res += (nptr[i] - 48);
 		res *= 10;
 		i++;
 	}
-	if (str[0] == '-')
+	if (nptr[0] == '-')
 		res *= -1;
 	return (res / 10);
 }

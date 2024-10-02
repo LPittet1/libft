@@ -6,9 +6,11 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:56:16 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/01 11:58:34 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/02 10:04:20 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	ft_tolower(char c)
 {

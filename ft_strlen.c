@@ -6,11 +6,13 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:37:58 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/01 11:39:03 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/02 10:16:33 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
 	int	i;
 
