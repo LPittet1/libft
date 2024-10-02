@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/02 13:46:11 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/02 14:45:24 by lpittet          ###   ########.fr       */
+/*   Created: 2024/10/02 14:26:30 by lpittet           #+#    #+#             */
+/*   Updated: 2024/10/02 14:39:39 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	i;
+	int				i;
+	unsigned char	*cs1;
+	unsigned char	*cs2;	
 
 	i = 0;
-	while (i < n - 1 && src[i])
+	cs1 = (unsigned char *)s1;
+	cs2 = (unsigned char *)s2;
+	while (i < n)
 	{
-		dest[i] = src[i];
+		if (cs1[i] != cs2[i])
+			return (cs1[i] - cs2[i]);
 		i++;
 	}
-	if (i < n)
-		dest[i] = 0;
-	return (i);
-}
-
-
-// cannot test home do at school also make strlcat and strnstr
-#include <string.h>
-
-int main()
-{
-	char dest[100];
-	char *src = "testing";
-	printf("my func : %ld\n", ft_strlcpy(dest, src, 2));
-	printf("original : %d\n", strlcpy(dest, src, 2));
+	return (0);
 }
