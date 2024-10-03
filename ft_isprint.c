@@ -6,21 +6,13 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:30:15 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/01 11:37:11 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/02 10:04:14 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(char *str)
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	while (str[i])
-	{
-		if (32 <= str[i] && str[i] <= 126)
-			i++;
-		else
-			return (0);
-	}
-	return (1);
+int	ft_isprint(int c)
+{
+	return (32 <= c && c <= 126);
 }

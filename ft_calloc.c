@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 10:48:26 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/02 10:04:13 by lpittet          ###   ########.fr       */
+/*   Created: 2024/10/02 14:46:30 by lpittet           #+#    #+#             */
+/*   Updated: 2024/10/03 09:51:18 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	return (48 <= c && c <= 57);
+	void	*array;
+
+	if(nmemb == 0 || size == 0)
+	{
+		nmemb = 1;
+		size = 1;
+	}
+	array = malloc(nmemb * size);
+	if (array == NULL)
+		return (NULL);
+	ft_bzero(array, nmemb);
+	return (array);
 }

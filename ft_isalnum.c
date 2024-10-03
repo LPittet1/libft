@@ -6,24 +6,16 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:08:49 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/01 11:15:12 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/02 10:04:09 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(char *str)
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	while (str[i])
-	{
-		if (('0' <= str[i] && str[i] <= '9') || ('A' <= str[i] && str[i] <= 'Z')
-			|| ('a' <= str[i] && str[i] <= 'z'))
-		{
-			i++;
-		}
-		else
-			return (0);
-	}
-	return (1);
+int	ft_isalnum(int c)
+{
+	if (('0' <= c && c <= '9') || ('A' <= c && c <= 'Z')
+		|| ('a' <= c && c <= 'z'))
+		return (1);
+	return (0);
 }

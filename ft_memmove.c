@@ -1,35 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 12:16:23 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/02 10:04:07 by lpittet          ###   ########.fr       */
+/*   Created: 2024/10/02 11:20:43 by lpittet           #+#    #+#             */
+/*   Updated: 2024/10/02 12:19:42 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	long	i;
-	long	res;
+	char	*temp;
+	char	*cdest;
+	char	*csrc;
+	int		i;
 
 	i = 0;
-	res = 0;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	cdest = (char *)dest;
+	csrc = (char *)src;
+	while (i < n && csrc[i])
 	{
+		temp[i] = csrc[i];
 		i++;
 	}
-	while ('0' <= nptr[i] && nptr[i] <= '9')
+	i = 0;
+	while (i < n)
 	{
-		res += (nptr[i] - 48);
-		res *= 10;
+		cdest[i] = temp[i];
 		i++;
 	}
-	if (nptr[0] == '-')
-		res *= -1;
-	return (res / 10);
+	return (dest);
+}
+
+
+// test at school also try invert dest and src
+#include <string.h>
+int main()
+{
+	char *dest = strdup("aaaaaaaa");
+	char *src = strdup("test");
+	memmove(dest,src,9);
+	printf("%s\n", dest);
 }

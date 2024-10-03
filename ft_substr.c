@@ -1,18 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 10:48:26 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/02 10:04:13 by lpittet          ###   ########.fr       */
+/*   Created: 2024/10/03 11:04:58 by lpittet           #+#    #+#             */
+/*   Updated: 2024/10/03 14:01:33 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	return (48 <= c && c <= 57);
+	char	*sub;
+	int		i;
+
+	i = 0;
+	sub = malloc(len * sizeof(char) + 1);
+	if (sub == NULL)
+		return (NULL);
+	while (s[start] && i < len)
+	{
+		sub[i] = s[start];
+		i++;
+		start++;
+	}
+	sub[i] = '\0';
+	return (sub);
 }
+/*
+int main ()
+{
+	printf("%s", ft_substr("un petit texte pour tester", 19, 10));
+}
+*/

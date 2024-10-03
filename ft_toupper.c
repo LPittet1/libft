@@ -6,11 +6,13 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:48:42 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/01 11:54:56 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/02 10:25:30 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_toupper(char c)
+#include "libft.h"
+
+char	ft_toupper(int c)
 {
 	if ('a' <= c && c <= 'z')
 		return (c - 32);
