@@ -6,44 +6,56 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 14:56:25 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/03 15:14:08 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/04 11:22:03 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int i)
+static	size_t	ft_countc(int n)
 {
-	char	*s;
-	int		len;
-	int		temp;
+	size_t	len;
 
-	temp = i;
 	len = 0;
-	while (temp != 0)
+	if (n < 0)
+		len++;
+	while (n != 0)
 	{
-		temp /= 10;
+		n /= 10;
 		len++;
 	}
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*s;
+	size_t	len;
+
+	if (n == -2147483648)
+		return ("-2147483648");
+	if (n == 0)
+		return ("0");
+	len = ft_countc(n);
 	s = malloc(sizeof(char) * (len + 1));
-	if (s == NULL)
-		return (NULL);
-	if (i < 0)
+	if (n < 0)
 	{
-		i *= -1;
 		s[0] = '-';
+		n *= -1;
 	}
-	while (i != 0)
+	s[len] = '\0';
+	while (n != 0)
 	{
-		ft_itoa(i / 10);
-		s[len] = (i % 10 + 48);
 		len--;
+		s[len] = (n % 10 + 48);
+		n /= 10;
 	}
 	return (s);
 }
 
 int main()
 {
-	int i = 123;
+	int i = -1;
+	printf("length : %lu\n", ft_countc(i));
 	printf("input : %d, itoa : %s\n", i, ft_itoa(i));
 }
