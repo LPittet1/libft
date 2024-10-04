@@ -1,37 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/04 11:37:39 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/04 13:45:26 by lpittet          ###   ########.fr       */
+/*   Created: 2024/10/04 13:13:05 by lpittet           #+#    #+#             */
+/*   Updated: 2024/10/04 13:20:05 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_putendl_fd(char *s, int fd)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		f(i, s + i);
-		i++;
-	}
-}
-
-void f_test(unsigned int i, char *c)
-{
-	*c += i;
-}
-
-int main()
-{
-	char *str =  "aaaaaa";
-	ft_striteri(str, f_test);
-	printf("%s", str);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
