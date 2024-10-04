@@ -1,0 +1,4 @@
+delete all mains;
+Makefile;
+clean header;
+test;
