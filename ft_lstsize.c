@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 14:37:08 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/04 15:33:16 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/07 11:25:42 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ int	ft_lstsize(t_list	*lst)
 		i++;
 		temp = temp->next;
 	}
+	return (i);
 }

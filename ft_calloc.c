@@ -6,25 +6,17 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 14:46:30 by lpittet           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2024/10/03 09:51:18 by lpittet          ###   ########.fr       */
-=======
-/*   Updated: 2024/10/02 14:57:22 by lpittet          ###   ########.fr       */
->>>>>>> 9192c60cbb66f3fb404272836b2650ff2051cb8f
+/*   Updated: 2024/10/07 11:11:12 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-<<<<<<< HEAD
 void	*ft_calloc(size_t nmemb, size_t size)
-=======
-void	*calloc(size_t nmemb, size_t size)
->>>>>>> 9192c60cbb66f3fb404272836b2650ff2051cb8f
 {
 	void	*array;
 
-	if(nmemb == 0 || size == 0)
+	if (nmemb == 0 || size == 0)
 	{
 		nmemb = 1;
 		size = 1;

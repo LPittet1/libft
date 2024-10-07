@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 14:26:30 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/02 14:39:39 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/07 10:58:22 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int				i;
+	unsigned long	i;
 	unsigned char	*cs1;
 	unsigned char	*cs2;	
 

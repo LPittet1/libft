@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 13:25:28 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/04 13:34:13 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/07 11:15:34 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	char	*nbr;
 
-	nbr =  ft_itoa(n);
+	nbr = ft_itoa(n);
 	ft_putstr_fd(nbr, fd);
 }

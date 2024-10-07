@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 11:29:03 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/03 11:51:02 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/07 10:52:21 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (join);
 }
 
-
+/*
 int main()
 {
 	char *s1 = "hello ";
 	char *s2 = "world!";
 	printf("%s", ft_strjoin(s1, s2));
-}
+}*/

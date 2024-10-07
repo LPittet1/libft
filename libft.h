@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 10:01:27 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/04 16:29:10 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/07 11:23:30 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,15 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef	struct s_list
+typedef struct s_list
 {	
 	void			*content;
 	struct s_list	*next;
 }					t_list;
 
-
 // Mandatory functions
 int		ft_atoi(const char *nptr);
-void	bzero(void *s, size_t n);
+void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -47,10 +46,10 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strjoin(char const *s1, char const *s2);
-size_t	ft_strlcat(char *dst, const char * src, size_t n);
+size_t	ft_strlcat(char *dst, const char *src, size_t n);
 size_t	ft_strlcpy(char *dest, const char *src, size_t n);
 size_t	ft_strlen(const char *str);
-char	*ft_strmapi(char const *s,  char (*f)(unsigned int, char));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(const char *s, int c);
@@ -70,7 +69,4 @@ void	ft_lstiter(t_list	*lst, void (*f)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-//to remove before submit for test
-# include <stdio.h>
-# include <string.h>
 #endif

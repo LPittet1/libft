@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 10:34:25 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/03 10:54:31 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/07 11:21:34 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int	i;
-	int	j;
+	unsigned long	i;
+	unsigned long	j;
 
 	i = 0;
 	if (needle == 0)
@@ -34,7 +34,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (0);
 }
-
+/*
 #include <string.h>
 
 int main(int ac, char **av)
@@ -44,4 +44,4 @@ int main(int ac, char **av)
 		printf("my func : %s\n", ft_strnstr(av[1], av[2], atoi(av[3])));
 		printf("original : %s\n", strnstr(av[1], av[2], atoi(av[3])));
 	}
-}
+}*/

@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 11:04:58 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/03 14:01:33 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/07 11:21:57 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*sub;
-	int		i;
+	char			*sub;
+	unsigned long	i;
 
 	i = 0;
 	sub = malloc(len * sizeof(char) + 1);

@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 13:27:59 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/04 10:35:02 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/07 11:14:59 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static size_t	count_words(char const *s, char c)
 {
-	int	i;
+	int		i;
 	size_t	count;
 
 	count = 0;
@@ -80,7 +80,7 @@ char	**ft_split(char const *s, char c)
 	tab[iword] = 0;
 	return (tab);
 }
-
+/*
 int main()
 {
 	char *s =  ",,,,,un,petit,,,,test,pour,voir,si,ca,fonctionne,,,,,";
@@ -93,4 +93,4 @@ int main()
 		i++;
 	}
 	free(tab);
-}
+}*/

@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 14:56:25 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/04 11:22:03 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/07 10:53:47 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ char	*ft_itoa(int n)
 	}
 	return (s);
 }
-
+/*
 int main()
 {
 	int i = -1;
 	printf("length : %lu\n", ft_countc(i));
 	printf("input : %d, itoa : %s\n", i, ft_itoa(i));
-}
+}*/

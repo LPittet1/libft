@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 12:41:04 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/03 13:24:32 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/07 11:39:02 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	while (ft_strchr(set, s1[end]))
 		end--;
-	trimmed = malloc(sizeof(char) * (end - start + 1));
+	trimmed = malloc(sizeof(char) * (end - start + 2));
 	if (trimmed == NULL)
 		return (NULL);
 	while (start <= end)
@@ -38,10 +38,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trimmed[i] = '\0';
 	return (trimmed);
 }
-
+/*
 int main ()
 {
 	char *s = "aaabbbcccdddeeefff";
 	char *set = "abf";
 	printf("%s", ft_strtrim(s, set));
-}
+}*/
