@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:32:09 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/02 10:04:15 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/07 15:13:35 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ char	*ft_strchr(const char *s, int c)
 		}
 		i++;
 	}
-	return (0);
+	if (c == '\0')
+		return ((char *)s + i);
+	return (NULL);
 }

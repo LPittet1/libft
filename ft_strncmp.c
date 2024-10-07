@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:21:47 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/07 11:20:52 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/07 16:02:36 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,13 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned long	i;
-
-	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n - 1)
+	while (s1 && *s1 == *s2 && n > 0)
 	{
-		i++;
+		s1++;
+		s2++;
+		n--;
 	}
-	return (s1[i] - s2[i]);
+	if (n == 0)
+		return (0);
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
-// to test at school
-/*
-#include <string.h>
-int main (int ac, char **av)
-{
-	if (ac == 4)
-	{
-		printf("my func : %d\n", ft_strncmp(av[1], av[2], atoi(av[3])));
-		printf("original : %d\n", strncmp(av[1], av[2], atoi(av[3])));
-	}
-}*/

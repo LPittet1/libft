@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 10:34:25 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/07 11:21:34 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/07 16:18:29 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,26 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	unsigned long	i;
-	unsigned long	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	if (needle == 0)
+	j = 0;
+	if (needle == NULL || needle[0] == 0)
 		return ((char *)haystack);
 	while (haystack[i] && i < len)
 	{
-		j = 0;
 		if (haystack[i] == needle[j])
 		{
-			i++;
-			j++;
-			if (j == ft_strlen(needle) - 1)
-				return ((char *)haystack + i - j);
+			while (haystack[i + j] == needle[j] && i + j < len)
+			{
+				if (j + 1 == ft_strlen(needle))
+					return ((char *)haystack + i);
+				j++;
+			}
+			j = 0;
 		}
 		i ++;
 	}
 	return (0);
 }
-/*
-#include <string.h>
-
-int main(int ac, char **av)
-{
-	if (ac == 4)
-	{
-		printf("my func : %s\n", ft_strnstr(av[1], av[2], atoi(av[3])));
-		printf("original : %s\n", strnstr(av[1], av[2], atoi(av[3])));
-	}
-}*/
