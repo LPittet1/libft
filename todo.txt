@@ -1,4 +1,1 @@
-delete all mains;
-Makefile;
-clean header;
-make test;
+corriger trim, split, itoa, + bonus
