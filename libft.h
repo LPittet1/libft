@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 10:01:27 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/08 14:20:07 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/08 20:17:20 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 
 typedef struct s_list
-{	
+{
 	void			*content;
 	struct s_list	*next;
 }					t_list;
