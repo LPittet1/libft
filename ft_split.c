@@ -6,11 +6,22 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 13:27:59 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/08 11:46:58 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/08 15:24:07 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static	char	**ft_free(char **tab, int i)
+{
+	while (i > 0)
+	{
+		i--;
+		free(tab[i]);
+	}
+	free(tab);
+	return (NULL);
+}
 
 static size_t	count_words(char const *s, char c)
 {
@@ -33,79 +44,45 @@ static size_t	count_words(char const *s, char c)
 	return (count);
 }
 
-static	char	*ft_word(char const *s, int start, int end)
+static	char	**ft_split_words(char const *s, char c, char **tab)
 {
-	char	*str;
+	size_t	len;
 	int		i;
+	size_t	iword;
 
 	i = 0;
-	str = malloc(sizeof(char) * (end - start));
-	if (str == NULL)
-		return (NULL);
-	while (start < end)
+	iword = 0;
+	len = 0;
+	while (iword < count_words(s, c))
 	{
-		str[i] = s[start];
-		i++;
-		start++;
+		while (s[i] && s[i] == c)
+			i++;
+		while (s[i] && s[i] != c)
+		{
+			i++;
+			len++;
+		}
+		tab[iword] = ft_substr(s, i - len, len);
+		if (tab == NULL)
+			return (ft_free(tab, iword));
+		len = 0;
+		iword++;
 	}
-	str[i] = '\0';
-	return (str);
+	tab[iword] = 0;
+	return (tab);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**tab;
-	int		i;
-	int		start;
-	int		iword;
+	char			**tab;
+	unsigned int	num_words;
 
-	i = 0;
-	iword = 0;
-	tab = malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!s)
+		return (0);
+	num_words = count_words(s, c);
+	tab = (char **)malloc(sizeof(char *) * (num_words + 1));
 	if (tab == NULL)
 		return (NULL);
-	while (s[i])
-	{
-		while (s[i] && s[i] == c)
-			i++;
-		start = i;
-		while (s[i] && s[i] != c)
-			i++;
-		if (i > start)
-		{
-			tab[iword] = ft_word(s, start, i);
-			iword++;
-		}
-	}
-	tab[iword] = NULL;
+	tab = ft_split_words(s, c, tab);
 	return (tab);
 }
-/*
-void	ft_print_result(char const *s)
-{
-	int		len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	write(1, s, len);
-}
-
-int main ()
-{
-	char	**tabstr;
-	int		i;
-
-	i = 0;
-	//tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ');
-	//tabstr = ft_split("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ');
-	//tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'i');
-	tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'z');
-	while (tabstr[i] != NULL)
-	{
-		ft_print_result(tabstr[i]);
-		write(1, "\n", 1);
-		i++;
-	}
-	free(tabstr);
-}*/

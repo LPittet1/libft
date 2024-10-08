@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 11:04:58 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/07 19:44:57 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/08 15:58:39 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	sub = malloc((len + 1) * sizeof(char));
-	if (start >= ft_strlen(s))
-		return (sub = "\0");
 	if (sub == NULL)
 		return (NULL);
+	if (start >= ft_strlen(s))
+		return (sub = "\0");
 	while (s[start] && i < len)
 	{
 		sub[i] = s[start];

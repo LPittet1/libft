@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 14:56:25 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/08 13:08:30 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/08 16:10:03 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static	size_t	ft_countc(int n)
 	return (len);
 }
 
-static char *itoa_min(void)
+static	char	*itoa_min(void)
 {
 	char	*s;
 

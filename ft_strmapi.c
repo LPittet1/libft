@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 11:25:05 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/07 11:20:30 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/08 15:57:28 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	len = ft_strlen(s);
 	res = malloc(sizeof(char) * (len + 1));
+	if (res == NULL)
+		return (NULL);
 	i = 0;
 	while (s[i] && i < len)
 	{
