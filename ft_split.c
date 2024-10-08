@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 13:27:59 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/07 11:14:59 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/08 11:46:58 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ static size_t	count_words(char const *s, char c)
 	i = 0;
 	while (s[i])
 	{
-		while (s[i] && s[i] != c)
+		if (s[i] == c)
+			i++;
+		else
 		{
-			if (i == 0 || (i > 0 && s[i - 1] == c))
-				count++;
-			i++;
+			count++;
+			while (s[i] && s[i] != c)
+				i++;
 		}
-		while (s[i] && s[i] == c)
-			i++;
 	}
 	return (count);
 }
@@ -77,20 +77,35 @@ char	**ft_split(char const *s, char c)
 			iword++;
 		}
 	}
-	tab[iword] = 0;
+	tab[iword] = NULL;
 	return (tab);
 }
 /*
-int main()
+void	ft_print_result(char const *s)
 {
-	char *s =  ",,,,,un,petit,,,,test,pour,voir,si,ca,fonctionne,,,,,";
-	char c =  ',';
-	int i = 0;
-	char **tab = ft_split(s, c);
-	while (tab[i])
+	int		len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	write(1, s, len);
+}
+
+int main ()
+{
+	char	**tabstr;
+	int		i;
+
+	i = 0;
+	//tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ');
+	//tabstr = ft_split("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ');
+	//tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'i');
+	tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'z');
+	while (tabstr[i] != NULL)
 	{
-		printf("%s\n", tab[i]);
+		ft_print_result(tabstr[i]);
+		write(1, "\n", 1);
 		i++;
 	}
-	free(tab);
+	free(tabstr);
 }*/

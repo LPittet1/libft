@@ -53,13 +53,11 @@ BNS =	ft_lstadd_back.c\
 		ft_lstnew.c\
 		ft_lstsize.c\
 
-HDR = libft.h
-
 OBJS = ${SRCS:.c=.o}
 
 OBJSB = ${BNS:.c=.o}
 
-%.o:%.c ${HDR}
+%.o:%.c 
 	${CC} ${CFLAGS} -c $< -o $@
 
 all:	${NAME}

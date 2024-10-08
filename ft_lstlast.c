@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 14:48:01 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/07 11:16:47 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/08 10:53:45 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	t_list	*temp;
 
+	if (!lst)
+		return (NULL);
 	temp = lst;
 	while (temp->next)
 		temp = temp->next;

@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 14:56:25 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/07 10:53:47 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/08 13:08:30 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,49 @@ static	size_t	ft_countc(int n)
 	return (len);
 }
 
+static char *itoa_min(void)
+{
+	char	*s;
+
+	s = malloc(sizeof(char) * 12);
+	s[0] = '-';
+	s[1] = '2';
+	s[2] = '1';
+	s[3] = '4';
+	s[4] = '7';
+	s[5] = '4';
+	s[6] = '8';
+	s[7] = '3';
+	s[8] = '6';
+	s[9] = '4';
+	s[10] = '8';
+	s[11] = '\0';
+	return (s);
+}
+
+static char	*itoa_zero(void)
+{
+	char	*s;
+
+	s = malloc(sizeof(char) * 2);
+	s[0] = '0';
+	s[1] = '\0';
+	return (s);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*s;
 	size_t	len;
 
 	if (n == -2147483648)
-		return ("-2147483648");
+		return (itoa_min());
 	if (n == 0)
-		return ("0");
+		return (itoa_zero());
 	len = ft_countc(n);
 	s = malloc(sizeof(char) * (len + 1));
+	if (s == NULL)
+		return (NULL);
 	if (n < 0)
 	{
 		s[0] = '-';
