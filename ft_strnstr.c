@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 10:34:25 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/07 16:18:29 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/09 11:03:22 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	i = 0;
 	j = 0;
-	if (needle == NULL || needle[0] == 0)
+	if (needle[0] == '\0')
 		return ((char *)haystack);
 	while (haystack[i] && i < len)
 	{

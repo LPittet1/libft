@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 12:41:04 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/08 10:08:27 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/09 10:50:43 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	i = 0;
 	end = ft_strlen(s1) - 1;
+	if (end == -1)
+		return (ft_calloc(1, 1));
 	while (ft_strchr(set, s1[start]))
 		start++;
 	if (start > end)
-		return (trimmed = "\0");
+		return (ft_calloc(1, 1));
 	while (ft_strchr(set, s1[end]))
 		end--;
-	trimmed = malloc(sizeof(char) * (end - start + 2));
-	if (trimmed == NULL)
-		return (NULL);
-	while (start <= end)
-	{
-		trimmed[i] = s1[start];
-		i++;
-		start++;
-	}
-	trimmed[i] = '\0';
+	trimmed = ft_substr(s1, start, end - start + 1);
 	return (trimmed);
 }

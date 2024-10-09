@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:21:47 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/08 14:47:51 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/09 09:30:23 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	while (s1 && *s1 == *s2 && n > 0)
+	while (*s1 && *s1 == *s2 && n > 0)
 	{
 		s1++;
 		s2++;

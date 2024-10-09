@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 16:07:28 by lpittet           #+#    #+#             */
-/*   Updated: 2024/10/08 16:10:44 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/10/09 11:20:10 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_list;
 	t_list	*new;
 
-	if (!f || !del)
+	if (!f || !del || !lst)
 		return (NULL);
+	new_list = 0;
 	while (lst)
 	{
 		new = ft_lstnew(f(lst->content));
