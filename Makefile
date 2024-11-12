@@ -42,8 +42,7 @@ SRCS = 	ft_atoi.c\
 		ft_substr.c\
 		ft_tolower.c\
 		ft_toupper.c\
-
-BNS =	ft_lstadd_back.c\
+		ft_lstadd_back.c\
 		ft_lstadd_front.c\
 		ft_lstclear.c\
 		ft_lstdelone.c\
@@ -52,10 +51,17 @@ BNS =	ft_lstadd_back.c\
 		ft_lstmap.c\
 		ft_lstnew.c\
 		ft_lstsize.c\
+		get_next_line.c\
+		printf.c\
+		print_alpha.c\
+		print_digit.c\
+		print_unsigned.c
 
-OBJS = ${SRCS:.c=.o}
+SRCDIR = srcs/
 
-OBJSB = ${BNS:.c=.o}
+SRCS_PRE = $(addprefix $(SRCDIR), $(SRCS))
+
+OBJS = $(SRCS_PRE:.c=.o)
 
 %.o:%.c 
 	${CC} ${CFLAGS} -c $< -o $@

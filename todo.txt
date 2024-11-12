@@ -1,1 +1,0 @@
-corriger trim, split, itoa, + bonus
