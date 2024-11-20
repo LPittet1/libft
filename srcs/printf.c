@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 19:02:29 by lpittet           #+#    #+#             */
-/*   Updated: 2024/11/12 09:07:12 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/11/20 16:44:59 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int	iter(const char *str, va_list args, int *i)
 		*i += 1;
 		stock = check_format(str[*i], args);
 		if (stock == -1)
-		{	
+		{
 			va_end(args);
 			return (-1);
 		}

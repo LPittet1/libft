@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 12:41:04 by lpittet           #+#    #+#             */
-/*   Updated: 2024/11/12 08:33:01 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/11/20 16:44:12 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*trimmed;
 	int		start;
 	int		end;
-	int		i;
 
 	start = 0;
-	i = 0;
 	end = ft_strlen(s1) - 1;
 	if (end == -1)
 		return (ft_calloc(1, 1));

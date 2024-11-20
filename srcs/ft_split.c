@@ -6,13 +6,13 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 13:27:59 by lpittet           #+#    #+#             */
-/*   Updated: 2024/11/12 08:33:01 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/11/20 16:45:58 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-static	char	**ft_free(char **tab, int i)
+char	**ft_free_tab(char **tab, int i)
 {
 	while (i > 0)
 	{
@@ -64,7 +64,7 @@ static	char	**ft_split_words(char const *s, char c, char **tab)
 		}
 		tab[iword] = ft_substr(s, i - len, len);
 		if (tab == NULL)
-			return (ft_free(tab, iword));
+			return (ft_free_tab(tab, iword));
 		len = 0;
 		iword++;
 	}

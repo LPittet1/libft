@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:37:28 by lpittet           #+#    #+#             */
-/*   Updated: 2024/11/12 09:07:21 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/11/20 16:44:48 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	ft_putnbr_p(unsigned long n, char *base, int prefix)
 		prefix = 1;
 		if (var == -1)
 			return (-1);
-	}	
+	}
 	len = print_len_p(n, 16) + 2;
 	if (n >= 16)
 	{

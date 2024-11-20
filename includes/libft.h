@@ -6,7 +6,7 @@
 /*   By: lpittet <lpittet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 10:01:27 by lpittet           #+#    #+#             */
-/*   Updated: 2024/11/12 09:04:54 by lpittet          ###   ########.fr       */
+/*   Updated: 2024/11/20 16:46:38 by lpittet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 
+//free split (char **)
+char	**ft_free_tab(char **tab, int i);
+
 //bonus functions
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
@@ -78,12 +81,12 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	*get_next_line(int fd);
 
 //printf
-int	ft_printf(const char *str, ...);
-int	check_format(int c, va_list args);
-int	ft_printchar(int c);
-int	ft_printstr(char *str);
-int	ft_putnbr(long int n, char *base);
-int	ft_putnbr_p(unsigned long n, char *base, int prefix);
-int	ft_putnbr_u(unsigned int n, char *base);
+int		ft_printf(const char *str, ...);
+int		check_format(int c, va_list args);
+int		ft_printchar(int c);
+int		ft_printstr(char *str);
+int		ft_putnbr(long int n, char *base);
+int		ft_putnbr_p(unsigned long n, char *base, int prefix);
+int		ft_putnbr_u(unsigned int n, char *base);
 
 #endif
